@@ -1,42 +1,287 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* App.css - Estilos personalizados para JIMI UI Library */
+
+/* === Layout General === */
+.app-sider {
+  background: #111827 !important;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.app-sider .ant-layout-sider-trigger {
+  background: #1f2937 !important;
 }
 
-@keyframes logo-spin {
+/* === Logo Container === */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 24px;
+  border-bottom: 1px solid #1f2937;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* === Menu Styles === */
+.app-menu {
+  background: transparent !important;
+  border-right: none !important;
+}
+
+.app-menu .ant-menu-item {
+  color: #9ca3af !important;
+  margin: 4px 8px !important;
+  border-radius: 8px !important;
+  width: calc(100% - 16px) !important;
+}
+
+.app-menu .ant-menu-item:hover {
+  background: #1f2937 !important;
+  color: #e5e7eb !important;
+}
+
+.app-menu .ant-menu-item-selected {
+  background: rgba(59, 130, 246, 0.2) !important;
+  color: #60a5fa !important;
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+}
+
+.app-menu .ant-menu-item-selected::after {
+  border-right: none !important;
+}
+
+.app-menu .ant-menu-item-group-title {
+  color: #6b7280 !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  padding-left: 16px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.app-menu .ant-menu-sub {
+  background: transparent !important;
+}
+
+/* === Header === */
+.app-header {
+  background: #111827 !important;
+  border-bottom: 1px solid #1f2937 !important;
+  padding: 0 24px !important;
+  height: 64px !important;
+  line-height: 64px !important;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+}
+
+.search-input .ant-input {
+  background: #1f2937 !important;
+  border: 1px solid #374151 !important;
+  color: #e5e7eb !important;
+  border-radius: 8px;
+}
+
+.search-input .ant-input:focus,
+.search-input .ant-input:hover {
+  border-color: #3b82f6 !important;
+  background: #1f2937 !important;
+}
+
+.search-input .ant-input::placeholder {
+  color: #6b7280 !important;
+}
+
+/* === Content === */
+.app-content {
+  padding: 24px;
+  background: #030712 !important;
+  min-height: calc(100vh - 64px);
+}
+
+/* === Stat Cards === */
+.stat-card {
+  background: #111827 !important;
+  border: 1px solid #1f2937 !important;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  border-color: #374151 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.stat-card .ant-card-body {
+  padding: 20px;
+}
+
+/* === Category Cards === */
+.category-card {
+  background: #111827 !important;
+  border: 1px solid #1f2937 !important;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.category-card .ant-card-body {
+  padding: 20px;
+}
+
+.category-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === Table Card === */
+.table-card {
+  background: #111827 !important;
+  border: 1px solid #1f2937 !important;
+  border-radius: 8px;
+}
+
+.table-card .ant-card-head {
+  border-bottom: 1px solid #1f2937 !important;
+  background: transparent !important;
+}
+
+.table-card .ant-card-head-title {
+  padding: 16px 0;
+}
+
+/* === Table Styles === */
+.components-table .ant-table {
+  background: transparent !important;
+}
+
+.components-table .ant-table-thead > tr > th {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-bottom: 1px solid #1f2937 !important;
+  color: #9ca3af !important;
+  font-weight: 600;
+  font-size: 11px;
+  padding: 12px 24px;
+}
+
+.components-table .ant-table-tbody > tr {
+  background: transparent !important;
+  border-bottom: 1px solid #1f2937 !important;
+  transition: all 0.2s ease;
+}
+
+.components-table .ant-table-tbody > tr:hover {
+  background: rgba(31, 41, 55, 0.5) !important;
+}
+
+.components-table .ant-table-tbody > tr > td {
+  border-bottom: 1px solid #1f2937 !important;
+  color: #e5e7eb !important;
+  padding: 16px 24px;
+}
+
+/* === Typography === */
+.ant-typography {
+  color: #e5e7eb !important;
+}
+
+.ant-typography-secondary {
+  color: #9ca3af !important;
+}
+
+/* === Buttons === */
+.ant-btn-text {
+  color: #9ca3af;
+}
+
+.ant-btn-text:hover {
+  color: #e5e7eb !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.ant-btn-link {
+  color: #60a5fa;
+}
+
+.ant-btn-link:hover {
+  color: #93c5fd !important;
+}
+
+/* === Badge === */
+.ant-badge {
+  color: inherit;
+}
+
+/* === Scrollbar === */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .app-content {
+    padding: 16px;
+  }
+  
+  .search-input {
+    max-width: 100%;
+  }
+}
+
+/* === Animations === */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(10px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.stat-card,
+.category-card,
+.table-card {
+  animation: fadeIn 0.4s ease-out;
 }
